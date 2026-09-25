@@ -220,97 +220,229 @@
 </section>
 
 
-      <!-- ================= CATEGORIES ================= -->
+<!-- ================= CATEGORIES ================= -->
 
-      <section id="categories" class="categories">
+<section id="categories" class="categories">
+
+    <div class="section-intro">
+
+        <span>
+            EXPLORE THE COLLECTION
+        </span>
+
+        <h2>
+            Shop by category
+        </h2>
+
+        <p>
+            From fresh favourites to everyday essentials,
+            find everything you need in one place.
+        </p>
+
+    </div>
+
+
+    <div class="category-grid">
+
+        <!-- CATEGORY 1 -->
+
+        <a href="#shop" class="category-card fresh">
+
+            <div class="category-overlay"></div>
+
+            <div class="category-content">
+
+                <span>
+                    01
+                </span>
+
+                <h3>
+                    Fresh
+                </h3>
+
+                <p>
+                    Fruits, vegetables & more
+                </p>
+
+                <strong>
+                    Explore →
+                </strong>
+
+            </div>
+
+        </a>
+
+
+        <!-- CATEGORY 2 -->
+
+        <a href="#shop" class="category-card pantry">
+
+            <div class="category-overlay"></div>
+
+            <div class="category-content">
+
+                <span>
+                    02
+                </span>
+
+                <h3>
+                    Pantry
+                </h3>
+
+                <p>
+                    Everyday kitchen essentials
+                </p>
+
+                <strong>
+                    Explore →
+                </strong>
+
+            </div>
+
+        </a>
+
+
+        <!-- CATEGORY 3 -->
+
+        <a href="#shop" class="category-card drinks">
+
+            <div class="category-overlay"></div>
+
+            <div class="category-content">
+
+                <span>
+                    03
+                </span>
+
+                <h3>
+                    Drinks
+                </h3>
+
+                <p>
+                    Coffee, tea & refreshments
+                </p>
+
+                <strong>
+                    Explore →
+                </strong>
+
+            </div>
+
+        </a>
+
+
+        <!-- CATEGORY 4 -->
+
+        <a href="#shop" class="category-card home">
+
+            <div class="category-overlay"></div>
+
+            <div class="category-content">
+
+                <span>
+                    04
+                </span>
+
+                <h3>
+                    Home
+                </h3>
+
+                <p>
+                    Simple things for your space
+                </p>
+
+                <strong>
+                    Explore →
+                </strong>
+
+            </div>
+
+        </a>
+
+    </div>
+
+</section>
+
+<!-- ================= PRODUCTS ================= -->
+
+<section id="shop" class="products">
+
+    <div class="section-heading">
+
         <div>
-          <p>EXPLORE</p>
 
-          <h2>Shop by category</h2>
+            <span>
+                OUR FAVOURITES
+            </span>
+
+            <h2>
+                Popular right now
+            </h2>
+
         </div>
 
-        <div class="category-grid">
-          <div class="category-card">
-            <h3>Fresh</h3>
-          </div>
 
-          <div class="category-card">
-            <h3>Pantry</h3>
-          </div>
+        <a href="#" class="view-all-btn">
+            View all products →
+        </a>
 
-          <div class="category-card">
-            <h3>Drinks</h3>
-          </div>
+    </div>
 
-          <div class="category-card">
-            <h3>Home</h3>
-          </div>
-        </div>
-      </section>
 
-      <!-- ================= PRODUCTS ================= -->
+    <!-- PRODUCT FILTERS -->
 
-      <section id="shop" class="products">
-        <div class="section-heading">
-          <div>
-            <p>OUR PICKS</p>
+    <div class="product-filters">
 
-            <h2>Popular products</h2>
-          </div>
+        <button
+            class="filter-btn active"
+            data-category="all"
+        >
+            All
+        </button>
 
-          <button>View all</button>
-        </div>
+        <button
+            class="filter-btn"
+            data-category="Fresh"
+        >
+            Fresh
+        </button>
 
-        <div class="product-grid">
-          <article class="product-card">
-            <div class="product-image">Product Image</div>
+        <button
+            class="filter-btn"
+            data-category="Pantry"
+        >
+            Pantry
+        </button>
 
-            <div class="product-info">
-              <p>Organic</p>
+        <button
+            class="filter-btn"
+            data-category="Drinks"
+        >
+            Drinks
+        </button>
 
-              <h3>Almond Milk</h3>
+        <button
+            class="filter-btn"
+            data-category="Home"
+        >
+            Home
+        </button>
 
-              <span> ₹249 </span>
-            </div>
-          </article>
+    </div>
 
-          <article class="product-card">
-            <div class="product-image">Product Image</div>
 
-            <div class="product-info">
-              <p>Fresh</p>
+    <!-- PRODUCT GRID -->
 
-              <h3>Avocado</h3>
+    <div
+        id="productGrid"
+        class="product-grid"
+    >
 
-              <span> ₹180 </span>
-            </div>
-          </article>
+        <!-- JavaScript will insert products here -->
 
-          <article class="product-card">
-            <div class="product-image">Product Image</div>
+    </div>
 
-            <div class="product-info">
-              <p>Beverage</p>
-
-              <h3>Cold Brew Coffee</h3>
-
-              <span> ₹220 </span>
-            </div>
-          </article>
-
-          <article class="product-card">
-            <div class="product-image">Product Image</div>
-
-            <div class="product-info">
-              <p>Pantry</p>
-
-              <h3>Granola</h3>
-
-              <span> ₹320 </span>
-            </div>
-          </article>
-        </div>
-      </section>
+</section>
 
       <!-- ================= NEWSLETTER ================= -->
 
