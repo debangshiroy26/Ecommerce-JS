@@ -271,6 +271,28 @@ function displayProducts(productList) {
 
     productGrid.appendChild(productCard);
 
+    productCard.addEventListener(
+    "click",
+    function (event) {
+
+        // Don't navigate if user
+        // clicked a button
+
+        if (
+            event.target.closest("button")
+        ) {
+
+            return;
+
+        }
+
+
+        window.location.href =
+            `product.html?id=${product.id}`;
+
+    }
+);
+
     const wishlistButton = productCard.querySelector(".product-wishlist");
 
     const cartButton = productCard.querySelector(".add-to-cart");

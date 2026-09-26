@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Product | NOVA</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+
+  <body>
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+      <nav class="nav-container">
+        <!-- LOGO -->
+
+        <a href="index.html" class="logo"> NOVA </a>
+
+        <!-- DESKTOP MENU -->
+
+        <div class="desktop-menu">
+          <a href="index.html"> Home </a>
+
+          <a href="index.html#shop"> Shop </a>
+
+          <a href="index.html#categories"> Categories </a>
+
+          <a href="index.html#deals"> Deals </a>
+        </div>
+
+        <!-- NAV ACTIONS -->
+
+        <div class="nav-actions">
+          <button class="nav-action" id="productSearchBtn" aria-label="Search">
+            🔍
+          </button>
+
+          <button
+            class="nav-action"
+            id="productWishlistBtn"
+            aria-label="Wishlist"
+          >
+            ♡
+          </button>
+
+          <button
+            class="nav-action cart-button"
+            id="productCartBtn"
+            aria-label="Shopping cart"
+          >
+            🛒
+
+            <span class="cart-count" id="productCartCount"> 0 </span>
+          </button>
+        </div>
+
+        <!-- MOBILE MENU -->
+
+        <button
+          class="mobile-menu-button"
+          id="productMobileMenuButton"
+          aria-label="Open menu"
+        >
+          ☰
+        </button>
+      </nav>
+    </header>
+
+    <!-- ================= BREADCRUMB ================= -->
+
+    <div class="product-breadcrumb">
+      <div class="breadcrumb-container">
+        <a href="index.html"> Home </a>
+
+        <span> / </span>
+
+        <a href="index.html#shop"> Shop </a>
+
+        <span> / </span>
+
+        <strong id="breadcrumbProduct"> Product </strong>
+      </div>
+    </div>
+
+    <!-- ================= PRODUCT DETAILS ================= -->
+
+    <main>
+      <section class="product-details">
+        <!-- PRODUCT IMAGE -->
+
+        <div class="product-details-image">
+          <div class="product-main-image">
+            <img id="productImage" src="" alt="" />
+
+            <span id="productBadge" class="product-detail-badge"> </span>
+          </div>
+        </div>
+
+        <!-- PRODUCT INFORMATION -->
+
+        <div class="product-details-info">
+          <span id="productCategory" class="product-detail-category">
+            CATEGORY
+          </span>
+
+          <h1 id="productName">Product Name</h1>
+
+          <div class="product-detail-price">
+            ₹<span id="productPrice"> 0 </span>
+          </div>
+
+          <div class="product-rating">
+            <span> ★★★★★ </span>
+
+            <small> 4.8 · 126 reviews </small>
+          </div>
+
+          <p id="productDescription" class="product-description">
+            Product description
+          </p>
+
+          <!-- QUANTITY -->
+
+          <div class="detail-quantity-section">
+            <span> Quantity </span>
+
+            <div class="detail-quantity">
+              <button id="detailDecrease">−</button>
+
+              <span id="detailQuantity"> 1 </span>
+
+              <button id="detailIncrease">+</button>
+            </div>
+          </div>
+
+          <!-- ACTIONS -->
+
+          <div class="product-detail-actions">
+            <button id="detailAddToCart" class="detail-add-cart">
+              Add to Cart
+              <span> → </span>
+            </button>
+
+            <button id="detailWishlist" class="detail-wishlist">♡</button>
+          </div>
+
+          <!-- PRODUCT BENEFITS -->
+
+          <div class="product-benefits">
+            <div>
+              <span> ✓ </span>
+
+              <p>Carefully selected products</p>
+            </div>
+
+            <div>
+              <span> ✓ </span>
+
+              <p>Secure checkout</p>
+            </div>
+
+            <div>
+              <span> ✓ </span>
+
+              <p>Easy returns</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= RELATED PRODUCTS ================= -->
+
+      <section class="related-products">
+        <div class="section-intro">
+          <span> YOU MAY ALSO LIKE </span>
+
+          <h2>More to explore</h2>
+        </div>
+
+        <div id="relatedProducts" class="product-grid">
+          <!-- JavaScript -->
+        </div>
+      </section>
+    </main>
+
+    <!-- ================= TOAST ================= -->
+
+    <div id="productToast" class="product-toast">Added to your cart ✓</div>
+
+    <!-- ================= SCRIPTS ================= -->
+
+    <script src="/js/products.js"></script>
+
+    <script src="/js/product-page.js"></script>
+  </body>
+</html>

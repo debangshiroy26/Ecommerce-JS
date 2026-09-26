@@ -27,6 +27,7 @@ const products = [
       "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=700&q=80",
 
     badge: "Popular",
+    description: "Creamy almond milk with a smooth texture and naturally nutty flavour.",
   },
 
   {
@@ -57,6 +58,9 @@ const products = [
       "https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=700&q=80",
 
     badge: "New",
+
+    description:
+      "Smooth, refreshing cold brew made for slow mornings, busy afternoons and everything in between.",
   },
 
   {
