@@ -12,6 +12,8 @@ const products = [
       "https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?auto=format&fit=crop&w=700&q=80",
 
     badge: "Fresh",
+
+    description: "Creamy, nutrient-rich avocado blend crafted for quick mornings, active afternoons, and everything in between.",
   },
 
   {
@@ -24,9 +26,10 @@ const products = [
     price: 249,
 
     image:
-      "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=700&q=80",
+      "https://plus.unsplash.com/premium_photo-1726766797584-4e934ec63af9?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
 
     badge: "Popular",
+
     description: "Creamy almond milk with a smooth texture and naturally nutty flavour.",
   },
 
@@ -43,6 +46,8 @@ const products = [
       "https://images.unsplash.com/photo-1641536885341-301aeb52f1c0?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8Y2xhc3NpYyUyMGdyYW5vbGF8ZW58MHx8MHx8fDA%3D",
 
     badge: "Bestseller",
+
+    description: "Crunchy, golden-baked oats tossed with organic honey, nuts, and a touch of sea salt. Made for slow mornings, busy afternoons, and everything in between."
   },
 
   {
@@ -76,6 +81,8 @@ const products = [
       "https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&w=700&q=80",
 
     badge: "Organic",
+
+    description: "Crisp, uplifting green tea crafted for quiet moments, active days, and every routine in between."
   },
 
   {
@@ -88,9 +95,11 @@ const products = [
     price: 290,
 
     image:
-      "https://images.unsplash.com/photo-1587049352846-4a222e784d38?auto=format&fit=crop&w=700&q=80",
+      "https://images.unsplash.com/photo-1587049352851-8d4e89133924?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
 
     badge: "Organic",
+
+    description: "Pure, golden sweetness crafted to elevate your daily rituals, from a drizzled morning roast to a soothing evening blend. 100% natural honey, harvested for life's sweetest moments."
   },
 
   {
@@ -103,9 +112,11 @@ const products = [
     price: 450,
 
     image:
-      "https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?auto=format&fit=crop&w=700&q=80",
+      "https://plus.unsplash.com/premium_photo-1682949695312-a97032210888?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
 
     badge: "New",
+
+    description:"Crafted for comfort and designed for your daily ritual. Whether it’s a morning pour-over, an afternoon matcha, or a cozy evening tea, these mugs turn every sip into a moment to pause."
   },
 
   {
@@ -121,20 +132,24 @@ const products = [
       "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=700&q=80",
 
     badge: "Limited",
+
+    description: "Soft, durable linen crafted for messy recipes, slow Sunday bakes, and everything in between. Bringing effortless warmth to the heart of your home. Everyday luxury for your kitchen."
   },
 
   {
     id: 9,
 
-    name: "Herbal Tea",
+    name: "Hardcover Printed Planners",
 
     category: "Fresh",
 
     price: 299,
 
     image:
-      "https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aGVyYmFsJTIwdGVhJTIwcGFja2V0fGVufDB8fDB8fHww",
+      "https://images.unsplash.com/photo-1653070863899-57ab83a18a72?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
 
-    badge: "Organic",
+    badge: "Stationary",
+
+    description: " A durable, beautifully bound companion built to withstand the messy reality of a well-lived life, keeping your thoughts grounded and your days beautifully organized."
   },
 ];
