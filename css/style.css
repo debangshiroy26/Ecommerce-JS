@@ -3342,3 +3342,141 @@ footer a {
 
   text-decoration: underline;
 }
+
+/* =========================
+   GLOBAL TOAST
+========================= */
+
+.global-toast {
+  position: fixed;
+
+  right: 25px;
+
+  bottom: 25px;
+
+  z-index: 6000;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 14px 18px;
+
+  background: #173f35;
+
+  color: #ffffff;
+
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.18);
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  opacity: 0;
+
+  visibility: hidden;
+
+  transform: translateY(20px) scale(0.96);
+
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease,
+    transform 0.3s ease;
+}
+
+.global-toast.active {
+  opacity: 1;
+
+  visibility: visible;
+
+  transform: translateY(0) scale(1);
+}
+
+.toast-icon {
+  width: 22px;
+
+  height: 22px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #d9a441;
+
+  color: #173f35;
+
+  font-size: 11px;
+
+  font-weight: 800;
+}
+
+@media (max-width: 600px) {
+  .global-toast {
+    right: 15px;
+
+    bottom: 15px;
+
+    left: 15px;
+
+    justify-content: center;
+  }
+}
+
+/* =========================
+   ADD TO CART FEEDBACK
+========================= */
+
+.add-to-cart.added {
+  background: #d9a441 !important;
+
+  color: #173f35 !important;
+
+  transform: scale(0.96);
+}
+
+/* =========================
+   SCROLL REVEAL
+========================= */
+
+.reveal {
+  opacity: 0;
+
+  transform: translateY(30px);
+
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+/* =========================
+   ACCESSIBLE FOCUS
+========================= */
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 2px solid #d9a441;
+
+  outline-offset: 3px;
+}
+
+.nav-action:active,
+.add-to-cart:active,
+.detail-add-cart:active,
+.checkout-btn:active,
+.place-order-btn:active {
+  transform: scale(0.97);
+}

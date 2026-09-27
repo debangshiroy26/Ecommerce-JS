@@ -60,6 +60,16 @@ document.getElementById("productImage").src = product.image;
 
 document.getElementById("productImage").alt = product.name;
 
+const productImage = document.getElementById("productImage");
+
+productImage.alt = product.name;
+
+productImage.addEventListener("error", function () {
+  this.src = "https://placehold.co/600x700/e8efea/173f35?text=NOVA";
+});
+
+productImage.src = product.image;
+
 document.getElementById("productBadge").textContent = product.badge;
 
 document.getElementById("productCategory").textContent = product.category;
@@ -132,7 +142,23 @@ function addProductToCart() {
 
 document
   .getElementById("detailAddToCart")
-  .addEventListener("click", addProductToCart);
+  .addEventListener("click", function () {
+    const button = this;
+
+    const originalText = button.innerHTML;
+
+    addProductToCart();
+
+    button.classList.add("added");
+
+    button.innerHTML = `Added ✓`;
+
+    setTimeout(function () {
+      button.innerHTML = originalText;
+
+      button.classList.remove("added");
+    }, 1200);
+  });
 
 function updateProductCartCount() {
   const cartCount = document.getElementById("productCartCount");
@@ -144,140 +170,80 @@ function updateProductCartCount() {
   cartCount.textContent = totalItems;
 }
 
-function showProductToast() {
+let productToastTimeout;
 
-    const toast =
-        document.getElementById(
-            "productToast"
-        );
+function showProductToast(message = "Added to your cart ✓") {
+  const toast = document.getElementById("productToast");
 
+  if (!toast) {
+    return;
+  }
 
-    toast.classList.add("active");
+  toast.textContent = message;
 
+  toast.classList.add("active");
 
-    setTimeout(function () {
+  clearTimeout(productToastTimeout);
 
-        toast.classList.remove("active");
-
-    }, 2200);
-
+  productToastTimeout = setTimeout(function () {
+    toast.classList.remove("active");
+  }, 2500);
 }
 
 // =========================
 // PRODUCT WISHLIST
 // =========================
 
-let wishlist =
-    JSON.parse(
-        localStorage.getItem(
-            "novaWishlist"
-        )
-    ) || [];
+let wishlist = JSON.parse(localStorage.getItem("novaWishlist")) || [];
 
-
-    const detailWishlist =
-    document.getElementById(
-        "detailWishlist"
-    );
-
+const detailWishlist = document.getElementById("detailWishlist");
 
 function updateWishlistButton() {
+  if (wishlist.includes(product.id)) {
+    detailWishlist.textContent = "♥";
 
-    if (
-        wishlist.includes(product.id)
-    ) {
+    detailWishlist.classList.add("liked");
+  } else {
+    detailWishlist.textContent = "♡";
 
-        detailWishlist.textContent =
-            "♥";
-
-        detailWishlist.classList.add(
-            "liked"
-        );
-
-    } else {
-
-        detailWishlist.textContent =
-            "♡";
-
-        detailWishlist.classList.remove(
-            "liked"
-        );
-
-    }
-
+    detailWishlist.classList.remove("liked");
+  }
 }
-
 
 updateWishlistButton();
 
-detailWishlist.addEventListener(
-    "click",
-    function () {
+detailWishlist.addEventListener("click", function () {
+  const index = wishlist.indexOf(product.id);
 
-        const index =
-            wishlist.indexOf(product.id);
+  if (index === -1) {
+    wishlist.push(product.id);
+  } else {
+    wishlist.splice(index, 1);
+  }
 
+  localStorage.setItem("novaWishlist", JSON.stringify(wishlist));
 
-        if (index === -1) {
-
-            wishlist.push(product.id);
-
-        } else {
-
-            wishlist.splice(index, 1);
-
-        }
-
-
-        localStorage.setItem(
-            "novaWishlist",
-            JSON.stringify(wishlist)
-        );
-
-
-        updateWishlistButton();
-
-    }
-);
+  updateWishlistButton();
+});
 
 // =========================
 // RELATED PRODUCTS
 // =========================
 
-const relatedProductsContainer =
-    document.getElementById(
-        "relatedProducts"
-    );
+const relatedProductsContainer = document.getElementById("relatedProducts");
 
+const relatedProducts = products
+  .filter(function (item) {
+    return item.category === product.category && item.id !== product.id;
+  })
+  .slice(0, 4);
 
-const relatedProducts =
-    products
-        .filter(function (item) {
+relatedProducts.forEach(function (item) {
+  const card = document.createElement("article");
 
-            return (
-                item.category ===
-                product.category
-                &&
-                item.id !== product.id
-            );
+  card.className = "product-card";
 
-        })
-        .slice(0, 4);
-
-        relatedProducts.forEach(
-    function (item) {
-
-        const card =
-            document.createElement(
-                "article"
-            );
-
-
-        card.className =
-            "product-card";
-
-
-        card.innerHTML = `
+  card.innerHTML = `
 
             <div class="product-image">
 
@@ -322,25 +288,11 @@ const relatedProducts =
 
         `;
 
+  relatedProductsContainer.appendChild(card);
 
-        relatedProductsContainer.appendChild(
-            card
-        );
-
-
-        card.addEventListener(
-            "click",
-            function () {
-
-                window.location.href =
-                    `product.html?id=${item.id}`;
-
-            }
-        );
-
-    }
-);
+  card.addEventListener("click", function () {
+    window.location.href = `product.html?id=${item.id}`;
+  });
+});
 
 updateProductCartCount();
-
-
