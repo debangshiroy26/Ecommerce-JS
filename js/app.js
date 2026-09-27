@@ -271,27 +271,16 @@ function displayProducts(productList) {
 
     productGrid.appendChild(productCard);
 
-    productCard.addEventListener(
-    "click",
-    function (event) {
+    productCard.addEventListener("click", function (event) {
+      // Don't navigate if user
+      // clicked a button
 
-        // Don't navigate if user
-        // clicked a button
+      if (event.target.closest("button")) {
+        return;
+      }
 
-        if (
-            event.target.closest("button")
-        ) {
-
-            return;
-
-        }
-
-
-        window.location.href =
-            `product.html?id=${product.id}`;
-
-    }
-);
+      window.location.href = `product.html?id=${product.id}`;
+    });
 
     const wishlistButton = productCard.querySelector(".product-wishlist");
 
@@ -378,7 +367,6 @@ filterButtons.forEach(function (button) {
     displayProducts(filteredProducts);
   });
 });
-
 
 // =========================
 // CART STATE
@@ -614,155 +602,70 @@ function changeQuantity(productId, change) {
 }
 
 function removeFromCart(productId) {
+  cart = cart.filter(function (item) {
+    return item.id !== productId;
+  });
 
-    cart =
-        cart.filter(function (item) {
+  saveCart();
 
-            return item.id !== productId;
+  updateCartCount();
 
-        });
-
-
-    saveCart();
-
-    updateCartCount();
-
-    renderCart();
-
+  renderCart();
 }
 
 function attachCartEvents() {
+  const increaseButtons = document.querySelectorAll(".increase-btn");
 
-    const increaseButtons =
-        document.querySelectorAll(
-            ".increase-btn"
-        );
+  const decreaseButtons = document.querySelectorAll(".decrease-btn");
 
+  const removeButtons = document.querySelectorAll(".remove-item");
 
-    const decreaseButtons =
-        document.querySelectorAll(
-            ".decrease-btn"
-        );
+  increaseButtons.forEach(function (button) {
+    button.addEventListener("click", function () {
+      const id = Number(button.dataset.id);
 
+      changeQuantity(id, 1);
+    });
+  });
 
-    const removeButtons =
-        document.querySelectorAll(
-            ".remove-item"
-        );
+  decreaseButtons.forEach(function (button) {
+    button.addEventListener("click", function () {
+      const id = Number(button.dataset.id);
 
+      changeQuantity(id, -1);
+    });
+  });
 
-    increaseButtons.forEach(
-        function (button) {
+  removeButtons.forEach(function (button) {
+    button.addEventListener("click", function () {
+      const id = Number(button.dataset.id);
 
-            button.addEventListener(
-                "click",
-                function () {
-
-                    const id =
-                        Number(
-                            button.dataset.id
-                        );
-
-
-                    changeQuantity(id, 1);
-
-                }
-            );
-
-        }
-    );
-
-
-    decreaseButtons.forEach(
-        function (button) {
-
-            button.addEventListener(
-                "click",
-                function () {
-
-                    const id =
-                        Number(
-                            button.dataset.id
-                        );
-
-
-                    changeQuantity(id, -1);
-
-                }
-            );
-
-        }
-    );
-
-
-    removeButtons.forEach(
-        function (button) {
-
-            button.addEventListener(
-                "click",
-                function () {
-
-                    const id =
-                        Number(
-                            button.dataset.id
-                        );
-
-
-                    removeFromCart(id);
-
-                }
-            );
-
-        }
-    );
-
+      removeFromCart(id);
+    });
+  });
 }
 
-const startShopping =
-    document.getElementById(
-        "startShopping"
-    );
+const startShopping = document.getElementById("startShopping");
 
+startShopping.addEventListener("click", function () {
+  closeCartDrawer();
 
-startShopping.addEventListener(
-    "click",
-    function () {
+  document.getElementById("shop").scrollIntoView({
+    behavior: "smooth",
+  });
+});
 
-        closeCartDrawer();
+const mobileCartBtn = document.getElementById("mobileCartBtn");
 
+mobileCartBtn.addEventListener("click", function () {
+  mobileMenu.classList.remove("active");
 
-        document
-            .getElementById("shop")
-            .scrollIntoView({
-                behavior: "smooth"
-            });
+  mobileMenuButton.textContent = "☰";
 
-    }
-);
+  renderCart();
 
-const mobileCartBtn =
-    document.getElementById(
-        "mobileCartBtn"
-    );
-
-
-mobileCartBtn.addEventListener(
-    "click",
-    function () {
-
-        mobileMenu.classList.remove(
-            "active"
-        );
-
-        mobileMenuButton.textContent =
-            "☰";
-
-        renderCart();
-
-        openCart();
-
-    }
-);
+  openCart();
+});
 // =========================
 // MOBILE MENU
 // =========================
@@ -804,10 +707,6 @@ mobileLinks.forEach(function (link) {
   });
 });
 
-
-
-
-
 // =========================
 // INITIALIZE CART
 // =========================
@@ -815,3 +714,15 @@ mobileLinks.forEach(function (link) {
 updateCartCount();
 
 renderCart();
+
+const checkoutBtn = document.getElementById("checkoutBtn");
+
+if (checkoutBtn) {
+  checkoutBtn.addEventListener("click", function () {
+    if (cart.length === 0) {
+      return;
+    }
+
+    window.location.href = "checkout.html";
+  });
+}

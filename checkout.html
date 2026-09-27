@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Checkout | NOVA</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+
+  <body class="checkout-page">
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+      <nav class="nav-container">
+        <a href="index.html" class="logo"> NOVA </a>
+
+        <div class="checkout-secure">
+          <span> 🔒 </span>
+
+          Secure Checkout
+        </div>
+      </nav>
+    </header>
+
+    <!-- ================= CHECKOUT ================= -->
+
+    <main class="checkout-main">
+      <div class="checkout-container">
+        <!-- ================= LEFT ================= -->
+
+        <section class="checkout-form-section">
+          <div class="checkout-heading">
+            <span> ALMOST THERE </span>
+
+            <h1>Checkout</h1>
+
+            <p>Complete your details to place your order.</p>
+          </div>
+
+          <!-- CONTACT -->
+
+          <div class="checkout-card">
+            <div class="checkout-section-title">
+              <div>
+                <span>01</span>
+
+                <h2>Contact information</h2>
+              </div>
+            </div>
+
+            <div class="checkout-grid">
+              <div class="checkout-field full">
+                <label for="email"> Email address </label>
+
+                <input
+                  type="email"
+                  id="email"
+                  placeholder="you@example.com"
+                  autocomplete="email"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- DELIVERY -->
+
+          <div class="checkout-card">
+            <div class="checkout-section-title">
+              <div>
+                <span>02</span>
+
+                <h2>Delivery address</h2>
+              </div>
+            </div>
+
+            <div class="checkout-grid">
+              <div class="checkout-field">
+                <label for="firstName"> First name </label>
+
+                <input
+                  type="text"
+                  id="firstName"
+                  placeholder="First name"
+                  autocomplete="given-name"
+                />
+              </div>
+
+              <div class="checkout-field">
+                <label for="lastName"> Last name </label>
+
+                <input
+                  type="text"
+                  id="lastName"
+                  placeholder="Last name"
+                  autocomplete="family-name"
+                />
+              </div>
+
+              <div class="checkout-field full">
+                <label for="address"> Address </label>
+
+                <input
+                  type="text"
+                  id="address"
+                  placeholder="House no., street, area"
+                  autocomplete="street-address"
+                />
+              </div>
+
+              <div class="checkout-field">
+                <label for="city"> City </label>
+
+                <input
+                  type="text"
+                  id="city"
+                  placeholder="City"
+                  autocomplete="address-level2"
+                />
+              </div>
+
+              <div class="checkout-field">
+                <label for="pincode"> PIN code </label>
+
+                <input
+                  type="text"
+                  id="pincode"
+                  placeholder="700000"
+                  maxlength="6"
+                  inputmode="numeric"
+                  autocomplete="postal-code"
+                />
+              </div>
+
+              <div class="checkout-field">
+                <label for="state"> State </label>
+
+                <select id="state">
+                  <option value="">Select state</option>
+
+                  <option>West Bengal</option>
+
+                  <option>Maharashtra</option>
+
+                  <option>Karnataka</option>
+
+                  <option>Delhi</option>
+
+                  <option>Tamil Nadu</option>
+                </select>
+              </div>
+
+              <div class="checkout-field">
+                <label for="phone"> Phone number </label>
+
+                <input
+                  type="tel"
+                  id="phone"
+                  placeholder="+91"
+                  autocomplete="tel"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- PAYMENT -->
+
+          <div class="checkout-card">
+            <div class="checkout-section-title">
+              <div>
+                <span>03</span>
+
+                <h2>Payment method</h2>
+              </div>
+            </div>
+
+            <div class="payment-options">
+              <label class="payment-option active">
+                <input type="radio" name="payment" value="cod" checked />
+
+                <div>
+                  <strong> Cash on Delivery </strong>
+
+                  <span> Pay when your order arrives </span>
+                </div>
+              </label>
+
+              <label class="payment-option">
+                <input type="radio" name="payment" value="upi" />
+
+                <div>
+                  <strong> UPI </strong>
+
+                  <span> Pay securely using UPI </span>
+                </div>
+              </label>
+
+              <label class="payment-option">
+                <input type="radio" name="payment" value="card" />
+
+                <div>
+                  <strong> Card </strong>
+
+                  <span> Credit or debit card </span>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <!-- PLACE ORDER -->
+
+          <button id="placeOrderBtn" class="place-order-btn">
+            <span> Place Order </span>
+
+            <span> → </span>
+          </button>
+
+          <p class="checkout-disclaimer">
+            By placing your order, you agree to our terms and conditions.
+          </p>
+        </section>
+
+        <!-- ================= RIGHT ================= -->
+
+        <aside class="checkout-summary">
+          <div class="summary-header">
+            <span> YOUR ORDER </span>
+
+            <h2>Order Summary</h2>
+          </div>
+
+          <div id="checkoutItems" class="checkout-items">
+            <!-- JavaScript -->
+          </div>
+
+          <div class="summary-calculation">
+            <div>
+              <span> Subtotal </span>
+
+              <strong id="checkoutSubtotal"> ₹0 </strong>
+            </div>
+
+            <div>
+              <span> Delivery </span>
+
+              <strong id="checkoutDelivery"> ₹50 </strong>
+            </div>
+
+            <div class="summary-total">
+              <span> Total </span>
+
+              <strong id="checkoutTotal"> ₹0 </strong>
+            </div>
+          </div>
+
+          <div class="checkout-trust">
+            <div>✓ Secure checkout</div>
+
+            <div>✓ Easy returns</div>
+
+            <div>✓ Quality products</div>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <!-- ================= SUCCESS MODAL ================= -->
+
+    <div id="orderSuccess" class="order-success">
+      <div class="success-card">
+        <div class="success-icon">✓</div>
+
+        <span> ORDER CONFIRMED </span>
+
+        <h2>Thank you for your order!</h2>
+
+        <p>
+          Your order has been successfully placed. We've saved the details of
+          your order.
+        </p>
+
+        <div class="order-number">
+          Order #
+          <strong id="orderNumber"> NOVA-000000 </strong>
+        </div>
+
+        <a href="index.html" class="continue-shopping"> Continue Shopping → </a>
+      </div>
+    </div>
+
+    <script src="/js/products.js"></script>
+
+    <script src="/js/checkout.js"></script>
+  </body>
+</html>
