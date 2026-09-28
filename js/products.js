@@ -13,7 +13,8 @@ const products = [
 
     badge: "Fresh",
 
-    description: "Creamy, nutrient-rich avocado blend crafted for quick mornings, active afternoons, and everything in between.",
+    description:
+      "Creamy, nutrient-rich avocado blend crafted for quick mornings, active afternoons, and everything in between.",
   },
 
   {
@@ -30,7 +31,8 @@ const products = [
 
     badge: "Popular",
 
-    description: "Creamy almond milk with a smooth texture and naturally nutty flavour.",
+    description:
+      "Creamy almond milk with a smooth texture and naturally nutty flavour.",
   },
 
   {
@@ -47,7 +49,8 @@ const products = [
 
     badge: "Bestseller",
 
-    description: "Crunchy, golden-baked oats tossed with organic honey, nuts, and a touch of sea salt. Made for slow mornings, busy afternoons, and everything in between."
+    description:
+      "Crunchy, golden-baked oats tossed with organic honey, nuts, and a touch of sea salt. Made for slow mornings, busy afternoons, and everything in between.",
   },
 
   {
@@ -82,7 +85,8 @@ const products = [
 
     badge: "Organic",
 
-    description: "Crisp, uplifting green tea crafted for quiet moments, active days, and every routine in between."
+    description:
+      "Crisp, uplifting green tea crafted for quiet moments, active days, and every routine in between.",
   },
 
   {
@@ -99,7 +103,8 @@ const products = [
 
     badge: "Organic",
 
-    description: "Pure, golden sweetness crafted to elevate your daily rituals, from a drizzled morning roast to a soothing evening blend. 100% natural honey, harvested for life's sweetest moments."
+    description:
+      "Pure, golden sweetness crafted to elevate your daily rituals, from a drizzled morning roast to a soothing evening blend. 100% natural honey, harvested for life's sweetest moments.",
   },
 
   {
@@ -116,7 +121,8 @@ const products = [
 
     badge: "New",
 
-    description:"Crafted for comfort and designed for your daily ritual. Whether it’s a morning pour-over, an afternoon matcha, or a cozy evening tea, these mugs turn every sip into a moment to pause."
+    description:
+      "Crafted for comfort and designed for your daily ritual. Whether it’s a morning pour-over, an afternoon matcha, or a cozy evening tea, these mugs turn every sip into a moment to pause.",
   },
 
   {
@@ -133,7 +139,8 @@ const products = [
 
     badge: "Limited",
 
-    description: "Soft, durable linen crafted for messy recipes, slow Sunday bakes, and everything in between. Bringing effortless warmth to the heart of your home. Everyday luxury for your kitchen."
+    description:
+      "Soft, durable linen crafted for messy recipes, slow Sunday bakes, and everything in between. Bringing effortless warmth to the heart of your home. Everyday luxury for your kitchen.",
   },
 
   {
@@ -141,7 +148,7 @@ const products = [
 
     name: "Hardcover Printed Planners",
 
-    category: "Fresh",
+    category: "Home",
 
     price: 299,
 
@@ -150,6 +157,61 @@ const products = [
 
     badge: "Stationary",
 
-    description: " A durable, beautifully bound companion built to withstand the messy reality of a well-lived life, keeping your thoughts grounded and your days beautifully organized."
+    description:
+      "A durable, beautifully bound companion built to withstand the messy reality of a well-lived life, keeping your thoughts grounded and your days beautifully organized.",
+  },
+
+  {
+    id: 10,
+
+    name: "Stationaries",
+
+    category: "Home",
+
+    price: 775,
+
+    image:
+      "https://plus.unsplash.com/premium_photo-1770545165855-cdf158480420?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTd8fGtuaWZlJTIwc2V0fGVufDB8fDB8fHww",
+
+    badge: "Stationaries",
+
+    description:
+      "A complete collection of essential writing and drawing tools crafted for quiet sketching sessions, hectic workdays, and every creative moment in between.This premium stationary set includes smooth-gliding pens, break-resistant pencils, a clean-wear eraser, and a precise scaling ruler to keep your thoughts flowing effortlessly from mind to paper.",
+  },
+
+  {
+    id: 11,
+
+    name: "Tooth Paste",
+
+    category: "Care",
+
+    price: 50,
+
+    image:
+      "https://images.unsplash.com/photo-1612705166160-97d3b2e8e212?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+
+    badge: "Tooth Paste",
+
+    description:
+      "Clean, refreshing care made for quiet mornings, rushed routines and everything in between.",
+  },
+
+  {
+    id: 12,
+
+    name: "Face Wash",
+
+    category: "Care",
+
+    price: 197.1,
+
+    image:
+      "https://images.unsplash.com/photo-1643747238009-6863ea63e78d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDJ8fGZhY2UlMjB3YXNofGVufDB8fDB8fHww",
+
+    badge: "Face Wash",
+
+    description:
+      "Light, purifying face wash made for quiet mornings, hectic afternoons and everything in between.",
   },
 ];
