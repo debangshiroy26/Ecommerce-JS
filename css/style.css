@@ -942,6 +942,8 @@ body {
   justify-content: space-between;
 
   gap: 30px;
+
+  padding-bottom: 15px;
 }
 
 .section-heading span {
@@ -1124,6 +1126,10 @@ body {
 }
 
 /* WISHLIST BUTTON */
+
+.wishlist-page #wishlistBtn {
+  color: green;
+}
 
 .product-wishlist {
   position: absolute;
