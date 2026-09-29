@@ -343,21 +343,7 @@ window.addEventListener("pageshow", syncWishlistFromStorage);
 const wishlistBtn = document.getElementById("wishlistBtn");
 
 wishlistBtn.addEventListener("click", function () {
-  const wishlistProducts = products.filter(function (product) {
-    return wishlist.includes(product.id);
-  });
-
-  if (wishlistProducts.length === 0) {
-    alert("Your wishlist is empty ❤️");
-
-    return;
-  }
-
-  displayProducts(wishlistProducts);
-
-  document.getElementById("shop").scrollIntoView({
-    behavior: "smooth",
-  });
+  window.location.href = "wishlist.html";
 });
 
 // =========================
@@ -382,17 +368,24 @@ filterButtons.forEach(function (button) {
 
     const selectedCategory = button.dataset.category;
 
+    const isWishlistPage = document.body.classList.contains("wishlist-page");
+    const savedWishlist =
+      nJSON.parse(localStorage.getItem("novaWishlist")) || [];
+    const productsToFilter = isWishlistPage
+      ? products.filter((product) => savedWishlist.includes(product.id))
+      : products;
+
     // Show all products
 
     if (selectedCategory === "all") {
-      displayProducts(products);
+      displayProducts(productsToFilter);
 
       return;
     }
 
     // Filter products
 
-    const filteredProducts = products.filter(function (product) {
+    const filteredProducts = productsToFilter.filter(function (product) {
       return product.category === selectedCategory;
     });
 
@@ -816,4 +809,11 @@ function observeRevealElements() {
 
 // Display all products when page loads
 
-displayProducts(products);
+const isWishlistPage = document.body.classList.contains("wishlist-page");
+const savedWishlist = JSON.parse(localStorage.getItem("novaWishlist")) || [];
+
+displayProducts(
+  isWishlistPage
+    ? products.filter((product) => savedWishlist.includes(product.id))
+    : products,
+);
