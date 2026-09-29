@@ -296,4 +296,3 @@ relatedProducts.forEach(function (item) {
 });
 
 updateProductCartCount();
-console.log(updateProductCartCount);
